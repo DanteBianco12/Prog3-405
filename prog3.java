@@ -38,8 +38,8 @@ public class prog3 {
         while(s.hasNext()){
             String[] rideSpec = s.next().split(":|\\[|\\)|,");
             String name = rideSpec[0];
-            int startTime = Integer.parseInt(rideSpec[1]);
-            int endTime = Integer.parseInt(rideSpec[2]);
+            int startTime = Integer.parseInt(rideSpec[2]);
+            int endTime = Integer.parseInt(rideSpec[3]);
             rides.add(new Ride(name, startTime, endTime));
         }
         s.close();
@@ -60,10 +60,7 @@ public class prog3 {
         }
 
         // Output Results
-        System.out.print("Selected Rides: ");
-        for(Ride ride : rides){
-            System.out.print(ride.name + " ");
-        }
-        System.out.println("\nTotal Time Spent: " + totalTime);
+        System.out.println("Selected Rides: " + String.join(", ", selectedRides));
+        System.out.println("Total Time Spent: " + totalTime);
     }
 }
